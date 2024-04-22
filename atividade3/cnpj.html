@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Validação de CNPJ</title>
+    <script>
+        function validaCNPJ(cnpj) {
+            cnpj = cnpj.replace(/[^\d]+/g, '');
+            if (cnpj.length !== 14 || /^(.)\1+$/.test(cnpj)) {
+                return false;
+            }
+
+            const tamanho = cnpj.length - 2;
+            const numeros = cnpj.substring(0, tamanho);
+            const digitos = cnpj.substring(tamanho);
+
+            const calculeDigito = (numeros, pesoInicial) => {
+                let soma = 0;
+                let peso = pesoInicial;
+                for (let i = numeros.length - 1; i >= 0; i--) {
+                    soma += parseInt(numeros.charAt(i)) * peso;
+                    peso = peso < 9 ? peso + 1 : 2;
+                }
+                const resto = soma % 11;
+                return resto < 2 ? 0 : 11 - resto;
+            };
+
+            const primeiroDigito = calculeDigito(numeros, 5);
+            const segundoDigito = calculeDigito(numeros + primeiroDigito, 6);
+
+            return primeiroDigito === parseInt(digitos.charAt(0)) && segundoDigito === parseInt(digitos.charAt(1));
+        }
+
+        function verificarCNPJ() {
+            const cnpj = document.getElementById("cnpjInput").value;
+            const resultado = validaCNPJ(cnpj) ? "CNPJ é válido!" : "CNPJ é inválido!";
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Validação de CNPJ</h1>
+    <input type="text" id="cnpjInput" placeholder="Digite o CNPJ">
+    <button onclick="verificarCNPJ()">Verificar CNPJ</button>
+    <div id="resultado"></div>
+</body>
+</html>
