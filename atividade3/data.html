@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Data e Hora em Tempo Real</title>
+    <script>
+        function dataHoraAtual() {
+            const agora = new Date();
+            const data = agora.toLocaleDateString('pt-BR');
+            const hora = agora.toLocaleTimeString('pt-BR');
+            return `${data} ${hora}`;
+        }
+
+        function mostrarDataHora() {
+            document.getElementById("dataHora").innerText = dataHoraAtual();
+        }
+    </script>
+</head>
+<body>
+    <h1>Data e Hora em Tempo Real</h1>
+    <button onclick="mostrarDataHora()">Mostrar Data e Hora</button>
+    <div id="dataHora"></div>
+</body>
+</html>
