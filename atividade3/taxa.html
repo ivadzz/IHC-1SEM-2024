@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calcular Comissão</title>
+    <script>
+        function calcularComissao(valorVenda, taxaComissao) {
+            return (valorVenda * (taxaComissao / 100)).toFixed(2);
+        }
+
+        function mostrarComissao() {
+            const valorVenda = parseFloat(document.getElementById("vendaInput").value);
+            const taxaComissao = parseFloat(document.getElementById("taxaInput").value);
+            document.getElementById("resultado").innerText = 
+                "Comissão: R$ " + calcularComissao(valorVenda, taxaComissao);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcular Comissão</h1>
+    <input type="number" id="vendaInput" placeholder="Digite o valor da venda">
+    <input type="number" id="taxaInput" placeholder="Digite a taxa de comissão">
+    <button onclick="mostrarComissao()">Calcular</button>
+    <div id="resultado"></div>
+</body>
+</html>
