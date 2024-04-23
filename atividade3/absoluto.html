@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Valor Absoluto</title>
+    <script>
+        function valorAbsoluto(valor) {
+            return Math.abs(valor);
+        }
+
+        function mostrarValorAbsoluto() {
+            const valor = parseFloat(document.getElementById("valorInput").value);
+            document.getElementById("resultado").innerText = "Valor absoluto: " + valorAbsoluto(valor);
+        }
+    </script>
+</head>
+<body>
+    <h1>Valor Absoluto</h1>
+    <input type="number" id="valorInput" placeholder="Digite um número">
+    <button onclick="mostrarValorAbsoluto()">Calcular</button>
+    <div id="resultado"></div>
+</body>
+</html>
