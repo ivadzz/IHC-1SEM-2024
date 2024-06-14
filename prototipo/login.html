@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="form_container">
+      <div class="left">
+        <div class="login_container">
+          <h1>Boas Vindas ao Bar Delivery</h1>
+          <span class="subtitle">Venha provar nossos Drinks!</span>
+
+          <button class="google_btn">
+            <img src="google.png" alt="" /> Faça login com google
+          </button>
+
+          <div class="line">
+            <span></span>
+            <small>or</small>
+            <span></span>
+          </div>
+
+          <form action="">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Senha" />
+
+            <div class="actions">
+              <div class="wrapper">
+                <input type="checkbox" id="remember" />
+                <label for="remember">Lembrar conta</label>
+              </div>
+              <a href="#">Esqueci a senha</a>
+            </div>
+
+            <button type="button" class="login_btn" onclick="window.location.href='index.html'">Log in</button>
+          </form>
+
+          <p class="signup_info">
+            Não tem conta? <a href="cadastrousuario.html">Se cadastre</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="info">
+          <p>
+            
+          </p>
+          <h2>Davi Brito, Guilherme Bezerra, Artur Vivacqua e Bruno Braga</h2>
+          <div class="arrows">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        var email = document.getElementById('email').value;
+        var senha = document.getElementById('senha').value;
+
+        if (!isValidEmail(email)) {
+            alert('Email inválido');
+            event.preventDefault();
+        }
+
+        if (!isValidPassword(senha)) {
+            alert('Senha não é segura');
+            event.preventDefault();
+        }
+    });
+
+    function isValidEmail(email) {
+        // Expressão regular para validar o email
+        var regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+        return regex.test(email);
+    }
+
+    function isValidPassword(senha) {
+        // Verifica se a senha tem pelo menos 8 caracteres, contendo letras, números e caracteres especiais
+        return senha.length >= 8 && /[a-z]/.test(senha) && /[A-Z]/.test(senha) && /\d/.test(senha) && /[!@#$%^&*()\-_=+{};:,<.>]/.test(senha);
+    }
+</script>
+
+</html>
+<style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --primary-color: #111727;
+  
+
+  --bg-color: #e7e8ec;
+  --border-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  display: grid;
+  place-items: center;
+}
+
+.form_container {
+  width: 80%;
+  height: 80%;
+  max-width: 1200px;
+  background-color: #fff;
+  display: flex;
+}
+
+.left,
+.right {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* LEFT */
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_container {
+  width: 100%;
+  max-width: 350px;
+}
+
+.login_container h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.login_container .subtitle {
+  color: var(--secondary-color);
+  font-size: 14px;
+}
+
+button {
+  margin: 2rem auto;
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.google_btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+}
+
+.google_btn img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.line {
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.line span {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+form {
+  margin-top: 3rem;
+}
+
+input[type='email'],
+input[type='password'] {
+  margin-bottom: 2rem;
+  padding-bottom: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.actions .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actions input {
+  accent-color: var(--primary-color);
+}
+
+.actions a {
+  color: var(--primary-color);
+}
+
+.login_btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+}
+
+.signup_info {
+  text-align: center;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+.signup_info a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* RIGHT */
+.right {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-image: url('images/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 23, 39, 0.3);
+  z-index: 1;
+}
+
+.right .info {
+  color: #fff;
+  z-index: 2;
+}
+
+.right .info p {
+  margin-bottom: 1rem;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.right .arrows {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.right .arrows img {
+  width: 60px;
+  height: 60px;
+}
+
+.right .arrows img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+
+@media (max-width: 992px) {
+  .right {
+    display: none;
+  }
+
+  .login_container {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form_container {
+    width: 90%;
+    height: 90%;
+  }
+}
+</style>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Delivery - Sistema de Gerenciamento de Produtos</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Bar Delivery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="produtos.html">Cardápio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrinho.html">Carrinho</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Conteúdo -->
+<div class="container mt-5">
+  <h2>Cadastro de Produtos</h2>
+  <!-- Botão para acionar o modal de cadastro de produto -->
+  <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalCadastroProduto">
+    Novo Produto
+  </button>
+
+  <!-- Tabela de Produtos -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Cerveja</td>
+        <td>Cerveja gelada</td>
+        <td>R$ 5,00</td>
+        <td>10</td>
+        <td>
+          <!-- Botões de ação -->
+          <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalEditarProduto" data-id="1" data-nome="Cerveja" data-descricao="Cerveja gelada" data-preco="5.00" data-quantidade="10">
+            Editar
+          </button>
+          <button type="button" class="btn btn-sm btn-danger ml-2" data-toggle="modal" data-target="#modalExcluirProduto" data-id="1">
+            Excluir
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Caipirinha</td>
+        <td>Caipirinha de limão</td>
+        <td>R$ 10,00</td>
+        <td>20</td>
+        <td>
+          <!-- Botões de ação -->
+          <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalEditarProduto" data-id="2" data-nome="Caipirinha" data-descricao="Caipirinha de limão" data-preco="10.00" data-quantidade="20">
+            Editar
+          </button>
+          <button type="button" class="btn btn-sm btn-danger ml-2" data-toggle="modal" data-target="#modalExcluirProduto" data-id="2">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal de Cadastro de Produto -->
+<div class="modal fade" id="modalCadastroProduto" tabindex="-1" role="dialog" aria-labelledby="modalCadastroProdutoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCadastroProdutoLabel">Novo Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulário de cadastro de produto -->
+        <form>
+          <div class="form-group">
+            <label for="inputNomeProduto">Nome</label>
+            <input type="text" class="form-control" id="inputNomeProduto" placeholder="Nome do produto">
+          </div>
+          <div class="form-group">
+            <label for="inputDescricaoProduto">Descrição</label>
+            <textarea class="form-control" id="inputDescricaoProduto" rows="3" placeholder="Descrição do produto"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputPrecoProduto">Preço</label>
+            <input type="text" class="form-control" id="inputPrecoProduto" placeholder="Preço do produto">
+          </div>
+          <div class="form-group">
+            <label for="inputQuantidadeProduto">Quantidade</label>
+            <input type="number" class="form-control" id="inputQuantidadeProduto" placeholder="Quantidade do produto">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" id="btnSalvarProduto">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Edição de Produto -->
+<div class="modal fade" id="modalEditarProduto" tabindex="-1" role="dialog" aria-labelledby="modalEditarProdutoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditarProdutoLabel">Editar Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulário de edição de produto -->
+        <form>
+          <div class="form-group">
+            <label for="inputNomeProdutoEdit">Nome</label>
+            <input type="text" class="form-control" id="inputNomeProdutoEdit" placeholder="Nome do produto">
+          </div>
+          <div class="form-group">
+            <label for="inputDescricaoProdutoEdit">Descrição</label>
+            <textarea class="form-control" id="inputDescricaoProdutoEdit" rows="3" placeholder="Descrição do produto"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="inputPrecoProdutoEdit">Preço</label>
+            <input type="text" class="form-control" id="inputPrecoProdutoEdit" placeholder="Preço do produto">
+          </div>
+          <div class="form-group">
+            <label for="inputQuantidadeProdutoEdit">Quantidade</label>
+            <input type="number" class="form-control" id="inputQuantidadeProdutoEdit" placeholder="Quantidade do produto">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" id="btnSalvarEdicaoProduto">Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Exclusão de Produto -->
+<div class="modal fade" id="modalExcluirProduto" tabindex="-1" role="dialog" aria-labelledby="modalExcluirProdutoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalExcluirProdutoLabel">Excluir Produto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza que deseja excluir este produto?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmarExclusao">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-muted text-center mt-5">
+  <div class="container">
+    <p>Desenvolvido por Artur Vivacqua - Bruno Braga - Davi Brito - Guilherme Bezerra</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JavaScript e dependências -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Função para preencher o formulário de edição de produto com os dados do produto selecionado
+  $('#modalEditarProduto').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var id = button.data('id');
+    var nome = button.data('nome');
+    var descricao = button.data('descricao');
+    var preco = button.data('preco');
+    var quantidade = button.data('quantidade');
+
+    var modal = $(this);
+    modal.find('.modal-title').text('Editar Produto - ID: ' + id);
+    modal.find('#inputNomeProdutoEdit').val(nome);
+    modal.find('#inputDescricaoProdutoEdit').val(descricao);
+    modal.find('#inputPrecoProdutoEdit').val(preco);
+    modal.find('#inputQuantidadeProdutoEdit').val(quantidade);
+  });
+
+  // Função para confirmar exclusão de produto
+  $('#modalExcluirProduto').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var id = button.data('id');
+
+    var modal = $(this);
+    modal.find('#btnConfirmarExclusao').attr('data-id', id);
+  });
+
+  // Função para executar a exclusão de produto
+  $('#btnConfirmarExclusao').click(function () {
+    var id = $(this).data('id');
+    // Aqui você pode fazer a chamada para excluir o produto com o ID informado
+    // Exemplo de chamada AJAX para excluir o produto
+    // $.ajax({
+    //   url: 'excluir_produto.php',
+    //   method: 'POST',
+    //   data: { id: id },
+    //   success: function(response) {
+    //     console.log('Produto excluído com sucesso!');
+    //     // Atualizar a tabela de produtos após exclusão
+    //   },
+    //   error: function(xhr, status, error) {
+    //     console.error('Erro ao excluir produto:', error);
+    //   }
+    // });
+    console.log('Produto com ID ' + id + ' excluído com sucesso!');
+    // Atualizar a tabela de produtos após exclusão
+    $('#modalExcluirProduto').modal('hide');
+  });
+
+  // Função para salvar um novo produto
+  $('#btnSalvarProduto').click(function () {
+    var nome = $('#inputNomeProduto').val();
+    var descricao = $('#inputDescricaoProduto').val();
+    var preco = $('#inputPrecoProduto').val();
+    var quantidade = $('#inputQuantidadeProduto').val();
+    // Aqui você pode fazer a chamada para salvar o novo produto
+    // Exemplo de chamada AJAX para salvar o produto
+    // $.ajax({
+    //   url: 'salvar_produto.php',
+    //   method: 'POST',
+    //   data: { nome: nome, descricao: descricao, preco: preco, quantidade: quantidade },
+    //   success: function(response) {
+    //     console.log('Novo produto cadastrado com sucesso!');
+    //     // Atualizar a tabela de produtos após cadastro
+    //   },
+    //   error: function(xhr, status, error) {
+    //     console.error('Erro ao cadastrar novo produto:', error);
+    //   }
+    // });
+    console.log('Novo produto cadastrado com sucesso!');
+    // Atualizar a tabela de produtos após cadastro
+    $('#modalCadastroProduto').modal('hide');
+  });
+
+  // Função para salvar as alterações de um produto existente
+  $('#btnSalvarEdicaoProduto').click(function () {
+    var id = $('#modalEditarProduto .modal-title').text().replace('Editar Produto - ID: ', '');
+    var nome = $('#inputNomeProdutoEdit').val();
+    var descricao = $('#inputDescricaoProdutoEdit').val();
+    var preco = $('#inputPrecoProdutoEdit').val();
+    var quantidade = $('#inputQuantidadeProdutoEdit').val();
+    // Aqui você pode fazer a chamada para atualizar os dados do produto
+    // Exemplo de chamada AJAX para atualizar o produto
+    // $.ajax({
+    //   url: 'atualizar_produto.php',
+    //   method: 'POST',
+    //   data: { id: id, nome: nome, descricao: descricao, preco: preco, quantidade: quantidade },
+    //   success: function(response) {
+    //     console.log('Produto atualizado com sucesso!');
+    //     // Atualizar a tabela de produtos após atualização
+    //   },
+    //   error: function(xhr, status, error) {
+    //     console.error('Erro ao atualizar produto:', error);
+    //   }
+    // });
+    console.log('Produto com ID ' + id + ' atualizado com sucesso!');
+    // Atualizar a tabela de produtos após atualização
+    $('#modalEditarProduto').modal('hide');
+  });
+</script>
+</body>
+</html>

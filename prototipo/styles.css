@@ -1,0 +1,142 @@
+/* style.css */
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #8f72bb;
+}
+
+.navbar-brand, .nav-link {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #050505 !important;
+  text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Jumbotron */
+.jumbotron {
+  background: linear-gradient(135deg, #6f42c1 0%, #b71c1c 100%);
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.jumbotron h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+}
+
+/* Card */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #563d7c;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.btn-outline-secondary {
+  border-color: #563d7c;
+  color: #563d7c;
+  font-weight: bold;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #563d7c;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: #563d7c;
+  color: white;
+  padding: 1rem 0;
+}
+
+footer p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1140px;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Additional Styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #563d7c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b71c1c;
+  text-decoration: underline;
+}
+
+.btn {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}

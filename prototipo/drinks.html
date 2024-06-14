@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="javascript.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Delivery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    h1, h2, h3 {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Bar Delivery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="produtos.html">Cardápio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="drinks.html">Drinks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrinho.html">Carrinho</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">SAIR</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron text-center">
+  <h1 class="display-4">Bem-vindo ao Bar Delivery!</h1>
+  <p class="lead">Peça suas bebidas e petiscos favoritos</p>
+</div>
+
+<!-- Drinks -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="drink1.jpeg" class="card-img-top" alt="Drink 1">
+        <div class="card-body">
+          <h5 class="card-title">Mojito</h5>
+          <p class="card-text">Rum, hortelã, limão, água com gás e açúcar.</p>
+          <p class="card-text">R$20,00</p>
+
+          <button type="button" class="btn btn-primary">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="drink2.jpeg" class="card-img-top" alt="Drink 2">
+        <div class="card-body">
+          <h5 class="card-title">Margarita</h5>
+          <p class="card-text">Tequila, licor de laranja, limão e sal na borda.</p>
+          <p class="card-text">R$25,00</p>
+
+          <button type="button" class="btn btn-primary">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="drink3.jpeg" class="card-img-top" alt="Drink 3">
+        <div class="card-body">
+          <h5 class="card-title">Cosmopolitan</h5>
+          <p class="card-text">Vodka, licor de laranja, suco de limão e cranberry.</p>
+          <p class="card-text">R$29,99</p>
+
+          <button type="button" class="btn btn-primary">Adicionar ao Carrinho</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-muted text-center">
+  <div class="container">
+    <p>Desenvolvido por Artur Vivacqua - Bruno Braga - Davi Brito - Guilherme Bezerra</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JavaScript e dependências -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <script src="javascript.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Delivery</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    h1, h2, h3 {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Bar Delivery</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="produtos.html">Cardápio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="drinks.html">Drinks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrinho.html">Carrinho</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">SAIR</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1 class="display-4">Bem-vindo ao Bar Delivery!</h1>
+  <p class="lead">Peça suas bebidas e petiscos favoritos</p>
+</div>
+
+
+<div class="container">
+
+  <div class="row mb-4">
+    <div class="col">
+
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Bebidas -->
+  <div id="bebidas" class="row">
+    <div class="col-12">
+      <h3>Drinks</h3>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="cerveja.png" class="card-img-top" alt="Cerveja">
+        <div class="card-body">
+          <h5 class="card-title">Cerveja</h5>
+          <p class="card-text">Budweiser lata 300ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 5,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="Caipirinha.jpeg" class="card-img-top" alt="Caipirinha">
+        <div class="card-body">
+          <h5 class="card-title">Caipirinha</h5>
+          <p class="card-text">Deliciosa caipirinha de limão 290ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 10,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="Whisky.jpeg" class="card-img-top" alt="Whisky">
+        <div class="card-body">
+          <h5 class="card-title">Whisky</h5>
+          <p class="card-text">Dose de Jack Daniels 100ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 15,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="vodka.jpg" class="card-img-top" alt="Vodka">
+        <div class="card-body">
+          <h5 class="card-title">Vodka</h5>
+          <p class="card-text">Dose de Absolut 100ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 12,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="refrigerante.jpg" class="card-img-top" alt="Refrigerante">
+        <div class="card-body">
+          <h5 class="card-title">Refrigerante</h5>
+          <p class="card-text">Coca-Cola lata 350ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 4,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="agua.jpeg" class="card-img-top" alt="Água">
+        <div class="card-body">
+          <h5 class="card-title">Água</h5>
+          <p class="card-text">Garrafa de água mineral 500ml</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 3,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Petiscos -->
+  <div id="petiscos" class="row">
+    <div class="col-12">
+      <h3>Petiscos</h3>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="batata.jpg" class="card-img-top" alt="Batata Frita">
+        <div class="card-body">
+          <h5 class="card-title">Batata Frita</h5>
+          <p class="card-text">Porção de batata frita 200g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 8,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="nachos.jpeg" class="card-img-top" alt="Nachos">
+        <div class="card-body">
+          <h5 class="card-title">Nachos</h5>
+          <p class="card-text">Porção de nachos com queijo 150g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 12,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="frango_frito.jpeg" class="card-img-top" alt="Frango Frito">
+        <div class="card-body">
+          <h5 class="card-title">Frango Frito</h5>
+          <p class="card-text">Porção de frango frito 200g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 15,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="calabresa.jpg" class="card-img-top" alt="Calabresa Acebolada">
+        <div class="card-body">
+          <h5 class="card-title">Calabresa Acebolada</h5>
+          <p class="card-text">Porção de calabresa acebolada 200g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Adicionar ao Carrinho</button>
+            </div>
+            <small class="text-muted">R$ 14,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Comidas -->
+  <div id="comidas" class="row">
+    <div class="col-12">
+      <h3>Comidas</h3>
+      <br>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="hamburguer.jpg" class="card-img-top" alt="Hambúrguer">
+        <div class="card-body">
+          <h5 class="card-title">Hambúrguer</h5>
+          <p class="card-text">Hambúrguer artesanal 200g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary btn-adicionar-carrinho" data-product-id="1">Adicionar ao Carrinho</button>
+
+            </div>
+            <small class="text-muted">R$ 20,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="pizza.jpeg" class="card-img-top" alt="Pizza">
+        <div class="card-body">
+          <h5 class="card-title">Pizza</h5>
+          <p class="card-text">Mini pizza de pepperoni 200g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary btn-adicionar-carrinho" data-product-id="1">Adicionar ao Carrinho</button>
+
+            </div>
+            <small class="text-muted">R$ 18,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="strogonoff.jpeg" class="card-img-top" alt="Strogonoff">
+        <div class="card-body">
+          <h5 class="card-title">Strogonoff</h5>
+          <p class="card-text">Strogonoff de carne com arroz e batata palha</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary btn-adicionar-carrinho" data-product-id="1">Adicionar ao Carrinho</button>
+
+            </div>
+            <small class="text-muted">R$ 25,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="lasanha.jpeg" class="card-img-top" alt="Lasanha">
+        <div class="card-body">
+          <h5 class="card-title">Lasanha</h5>
+          <p class="card-text">Lasanha à bolonhesa 300g</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary btn-adicionar-carrinho" data-product-id="1">Adicionar ao Carrinho</button>
+
+            </div>
+            <small class="text-muted">R$ 22,00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-muted text-center">
+  <div class="container">
+    <p>Desenvolvido por Artur Vivacqua - Bruno Braga - Davi Brito - Guilherme Bezerra</p>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="javascript.js"></script>
+</body>
+</html>
